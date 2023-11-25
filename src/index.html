@@ -8,7 +8,16 @@
 <body>
 
     <div class="container">
-        <div class="sidebar">SIDEBAR</div>
+        <div class="sidebar">
+            <div class="sidebar-container">
+            <div class="project-tab-container">
+                <div class="project-tab">PROJECTS</div>
+            </div>
+            <div class="todo-tab-container">
+                <div class="todo-tab">TOODOS</div>
+            </div>
+        </div>
+    </div>
         <div class="main">
             <div class="controls">
                 <div class="logo-title">
@@ -18,6 +27,37 @@
                 <div class="add-projects">ADD PROJECTS  +</div>
                 <div class="add-todo">ADD TODO +</div>
             </div>
+            <form action="#" class="todo-form">
+                    <div class="delete-container">
+                        <div class="close-form">x</div>
+                    </div>
+                    <h2 class="title-todo-form">NEW TOODO ITEM</h2>
+                    <div class="title-container">
+                        <label for="title" >TITLE</label>
+                        <input type="text" id="title" class="input-box" name="title" required>
+                    </div>
+                    <div class="description-container">
+                        <label for="desc">DESCRIPTION</label>
+                        <input type="text" id="desc" class="input-box">
+                    </div>
+                    <div class="date-container">
+                        <label for="date">DUE DATE</label>
+                        <input type="text" id="date" class="input-box">
+                    </div>
+                    <div class="description-container">
+                        <label for="priority">PRIORITY</label>
+                        <select name="priority" id="priority" >
+                            <option value=""  selected disabled>CHOOSE ONE</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                    <input type="submit" class="submit"></input>
+               
+                </form>
             <div class="list">
                 <ul class="item-list">
                 </ul>
