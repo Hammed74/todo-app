@@ -31,7 +31,7 @@ function addToDom(obj) {
   } else if (obj.priority == 3) {
     todoItem.style.borderLeft = "10px solid purple";
   } else if (obj.priority == 4) {
-    todoItem.style.borderLeft = "10px solid blue";
+    todoItem.style.borderLeft = "10px solid green";
   } else if (obj.priority == 5) {
     todoItem.style.borderLeft = "10px solid blue";
   }
@@ -55,4 +55,20 @@ function addToDom(obj) {
   listArray.push(obj);
 }
 
-export default addToDom;
+function addProjectToDom(obj){
+    const projectList = document.querySelector(".project-list")
+    const projectListItem = document.createElement("li")
+    projectListItem.classList.add("project");
+    projectList.appendChild(projectListItem)
+    const header = document.createElement("h1")
+    header.textContent = "Project Title"
+    projectListItem.appendChild(header)
+    const title = document.createElement("p")
+    title.textContent = obj.title
+    projectListItem.appendChild(title)
+}
+
+
+export {addToDom,
+        addProjectToDom
+}
