@@ -8,14 +8,79 @@
 <body>
 
     <div class="container">
-        <div class="sidebar">SIDEBAR</div>
+        <div class="sidebar">
+            <div class="sidebar-container">
+            <div class="project-tab-container">
+                <div class="project-tab">PROJECTS</div>
+            </div>
+            <div class="todo-tab-container">
+                <div class="todo-tab">TOODOS</div>
+            </div>
+        </div>
+    </div>
         <div class="main">
             <div class="controls">
-                <img src="/3eb8f222dc93a91c2c2c.png" alt="light bulb">
-                <div class="add-projects">ADD PROJECTS</div>
-                <div class="add-todo">ADD TODO</div>
+                <div class="logo-title">
+                    <img class="logo" src="/3eb8f222dc93a91c2c2c.png" alt="light bulb">
+                    <h1 class="title">TOODO</h1>
+                </div>
+                <div class="add-projects">ADD PROJECTS  +</div>
+                <div class="add-todo">ADD TODO +</div>
             </div>
-            <div class="list"></div>
+            <form action="#" class="todo-form">
+                    <div class="delete-container">
+                        <div class="close-form">x</div>
+                    </div>
+                    <h2 class="title-todo-form">NEW TOODO ITEM</h2>
+                    <div class="title-container">
+                        <label for="title" >TITLE</label>
+                        <input type="text" id="title" class="input-box" name="title" required>
+                    </div>
+                    <div class="description-container">
+                        <label for="desc">DESCRIPTION</label>
+                        <input type="text" id="desc" class="input-box">
+                    </div>
+                    <div class="date-container">
+                        <label for="date">DUE DATE</label>
+                        <input type="text" id="date" class="input-box">
+                    </div>
+                    <div class="description-container">
+                        <label for="priority">PRIORITY</label>
+                        <select name="priority" id="priority" >
+                            <option value=""  selected disabled>CHOOSE ONE</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                    <input type="submit" class="submit"></input>
+               
+                </form>
+                <form action="#" class="project-form">
+                    <div class="delete-container">
+                        <div class="close-project-form">x</div>
+                    </div>
+                    <h2 class="title-project-form">NEW PROJECT</h2>
+                    <div class="title-container">
+                        <label for="title" >PROJECT NAME</label>
+                        <input type="text" id="projectTitle" class="input-box" name="title" required>
+                    </div>
+                    <div class="date-container">
+                        <label for="date">DUE DATE</label>
+                        <input type="text" id="projectDate" class="input-box">
+                    </div>
+                    <input type="submit" class="project-submit"></input>
+               
+                </form>
+            <div class="list">
+                <ul class="item-list">
+                </ul>
+                <ul class="project-list">
+
+                </ul>
+            </div>
         </div>
     </div>
 </body>
