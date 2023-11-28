@@ -1,4 +1,5 @@
 import { listArray } from "./addtodo";
+import closeButton from "./assets/close.png"
 
 function addToDom(obj) {
   const todoItem = document.createElement("li");
@@ -59,16 +60,37 @@ function addProjectToDom(obj){
     const projectList = document.querySelector(".project-list")
     const projectListItem = document.createElement("li")
     projectListItem.classList.add("project");
+    projectListItem.id = obj.title
     projectList.appendChild(projectListItem)
+    const project = document.querySelector("#project")
+
     const header = document.createElement("h1")
-    header.textContent = "Project Title"
+    header.textContent = obj.title
     projectListItem.appendChild(header)
-    const title = document.createElement("p")
-    title.textContent = obj.title
-    projectListItem.appendChild(title)
+
+    const date = document.createElement("p")
+    date.classList.add("project-date")
+    date.textContent = `Due Date: ${obj.date}`
+    projectListItem.appendChild(date)
+
+    const projectInList = document.createElement("option");
+    projectInList.value = obj.title;
+    projectInList.textContent = obj.title;
+    project.appendChild(projectInList);
+
+    const deleteButton = document.createElement("img")
+    deleteButton.src = closeButton;
+    deleteButton.classList.add("project-delete")
+    projectListItem.appendChild(deleteButton)
+
+    deleteButton.addEventListener("click", (event) => {
+      event.stopPropagation()
+        projectListItem.remove()
+
+    })
+
+
 }
-
-
 export {addToDom,
-        addProjectToDom
+        addProjectToDom,
 }

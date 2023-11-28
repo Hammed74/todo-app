@@ -1,11 +1,12 @@
 import { addToDom } from "./addToDom";
 import { addProjectToDom } from "./addToDom";
 class ListItem{
-    constructor(title, description, date, priority){
+    constructor(title, description, date, priority,project){
         this.title = title,
         this.description = description, 
         this.date = date,
-        this.priority = priority
+        this.priority = priority,
+        this.project = project
     }
 }
 
@@ -44,5 +45,6 @@ function makeList() {
 export {ListItem,
         listArray,
         makeList,
-        makeProjects
+        makeProjects,
+        ProjectItem
 };

@@ -44,7 +44,7 @@
                         <label for="date">DUE DATE</label>
                         <input type="text" id="date" class="input-box">
                     </div>
-                    <div class="description-container">
+                    <div class="priority-container">
                         <label for="priority">PRIORITY</label>
                         <select name="priority" id="priority" >
                             <option value=""  selected disabled>CHOOSE ONE</option>
@@ -53,6 +53,12 @@
                             <option value="3">3</option>
                             <option value="4">4</option>
                             <option value="5">5</option>
+                        </select>
+                    </div>
+                     <div class="project-slect-container">
+                        <label for="project">Project</label>
+                        <select name="project" id="project" >
+                            <option value=""  selected disabled>NONE</option>
                         </select>
                     </div>
                     <input type="submit" class="submit"></input>
@@ -65,20 +71,19 @@
                     <h2 class="title-project-form">NEW PROJECT</h2>
                     <div class="title-container">
                         <label for="title" >PROJECT NAME</label>
-                        <input type="text" id="title" class="input-box" name="title" required>
+                        <input type="text" id="projectTitle" class="input-box" name="title" required>
                     </div>
                     <div class="date-container">
                         <label for="date">DUE DATE</label>
-                        <input type="text" id="date" class="input-box">
+                        <input type="text" id="projectDate" class="input-box">
                     </div>
-                    <input type="submit" class="submit"></input>
+                    <input type="submit" class="project-submit"></input>
                
                 </form>
             <div class="list">
                 <ul class="item-list">
                 </ul>
                 <ul class="project-list">
-
                 </ul>
             </div>
         </div>
