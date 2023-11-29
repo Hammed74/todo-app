@@ -1,5 +1,6 @@
 import { listArray } from "./addtodo";
 import closeButton from "./assets/close.png"
+import {format, parseISO} from "date-fns"
 
 function addToDom(obj) {
   const todoItem = document.createElement("li");
@@ -19,7 +20,11 @@ function addToDom(obj) {
   const listDate = document.createElement("p");
   listDate.classList.add("list-date");
   todoItem.appendChild(listDate);
-  listDate.textContent = "Date: " + obj.date;
+  const parsedDate = parseISO(obj.date)
+  const formattedDate = format(parsedDate, "eeee - LLL dd, yyyy");
+  listDate.textContent = formattedDate
+  console.log(formattedDate)
+  
 
   const listPriority = document.createElement("p");
   listPriority.classList.add("list-priority");

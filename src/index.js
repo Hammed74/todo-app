@@ -71,6 +71,8 @@ let page = () => {
       listArray.push(item);
       console.log(listArray);
        todoForm.style.display = "none";
+       console.log(JSON.parse(localStorage.getItem("todo-array")))
+
     } else if (
       title.value !== "" &&
       desc.value !== "" &&
@@ -91,6 +93,7 @@ let page = () => {
     } else {
       alert("You must fill out ALL fields.");
     }
+     localStorage.setItem("todo-array", JSON.stringify(listArray));
   });
 
   projectSubmitButton.addEventListener("click", (event) => {
@@ -114,17 +117,22 @@ let page = () => {
         projectBox.classList.add("project-box");
         projectBox.style.display = "flex";
         projectList.appendChild(projectBox);
-        projectBox.textContent = "Nothng To Show Here."
+        projectBox.textContent = "Nothing To Show Here."
         const projectId = event.target.id;
 
-        listArray.forEach((item, index) => {
+            if(localStorage.getItem("todo-array")){
+        const storedListArray = JSON.parse(localStorage.getItem("todo-array"));
+        console.log(storedListArray)
+
+        storedListArray.forEach((item, index) => {
          if (item.project === projectId) {
           projectBox.textContent = ""
-            todoInProject(listArray[index], projectBox);
-            listArray[index].appended = true
+            todoInProject(storedListArray[index], projectBox);
+            storedListArray[index].appended = true
             console.log(item);
           }
         });
+      }
 
         const deleteButton = document.createElement("img");
         deleteButton.src = closeButton;
@@ -133,6 +141,7 @@ let page = () => {
 
         deleteButton.addEventListener("click", (event) => {
           event.stopPropagation();
+
           projectBox.remove()
         });
       }

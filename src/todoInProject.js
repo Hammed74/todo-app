@@ -1,3 +1,4 @@
+import { listArray } from "./addtodo";
 const projectListArray = []
 
 function todoInProject(obj,event) {
@@ -47,12 +48,11 @@ function todoInProject(obj,event) {
         listArray.splice(i, 1);
         todoItem.remove();
         console.log(projectListArray);
+        localStorage.setItem("todo-array", JSON.stringify(listArray));
         break;
       }
     }
   });
-  projectListArray.push(obj)
-  console.log(projectListArray)
 }
 
 export{

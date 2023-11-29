@@ -28,14 +28,14 @@ function makeList() {
   let item1 = new ListItem(
     "Go jogging.",
     "Go for a jog around Kelly Drive",
-    "November 30th, 2023",
+    "2023-11-30",
     3
   );
 
   let item2 = new ListItem(
     "Cook Sushi",
     "Use new sushi from store",
-    "November 20th, 2023",
+    "2023-11-30",
     5
   );
   addToDom(item1);
