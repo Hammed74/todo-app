@@ -7,7 +7,6 @@ import { ProjectItem } from "./addtodo";
 import { addProjectToDom } from "./addToDom.js";
 import closeButton from "./assets/close.png";
 import { todoInProject } from "./todoInProject.js";
-import { projectListArray } from "./todoInProject.js";
 
 let page = () => {
   const todoButton = document.querySelector(".add-todo");
